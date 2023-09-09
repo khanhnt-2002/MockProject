@@ -1,0 +1,7 @@
+import subprocess
+def run_robot_task():
+    # Đường dẫn đến tệp .robot bạn muốn chạy
+    robot_file_path = "D:\Mock_Project\MJ.robot"
+    # Sử dụng subprocess để chạy tệp robot
+    subprocess.call(["robot", robot_file_path])
+

@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20230909 08:06:57.144" rpa="false" schemaversion="4">
+<suite id="s1" name="MJ" source="D:\Mock_Project\MJ.robot">
+<test id="s1-t1" name="Login" line="31">
+<kw name="Open Available Browser">
+<arg>${URL_LOGIN}</arg>
+<msg timestamp="20230909 08:06:57.299" level="FAIL">No keyword with name 'Open Available Browser' found.</msg>
+<status status="FAIL" starttime="20230909 08:06:57.299" endtime="20230909 08:06:57.299"/>
+</kw>
+<kw name="Get Secret">
+<var>${Datalogin}</var>
+<arg>swaglabs</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.304" endtime="20230909 08:06:57.304"/>
+</kw>
+<kw name="Input Text">
+<arg>//input[@id="UserName"]</arg>
+<arg>${Datalogin}[username]</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.307" endtime="20230909 08:06:57.308"/>
+</kw>
+<kw name="Input Password">
+<arg>//input[@id="Password"]</arg>
+<arg>${Datalogin}[password]</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.311" endtime="20230909 08:06:57.311"/>
+</kw>
+<kw name="Click Button">
+<arg>//input[@type="submit"]</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.316" endtime="20230909 08:06:57.316"/>
+</kw>
+<status status="FAIL" starttime="20230909 08:06:57.292" endtime="20230909 08:06:57.317">No keyword with name 'Open Available Browser' found.</status>
+</test>
+<test id="s1-t2" name="Exlog" line="38">
+<kw name="Go To">
+<arg>${URL_EXLOG}</arg>
+<msg timestamp="20230909 08:06:57.323" level="FAIL">No keyword with name 'Go To' found.</msg>
+<status status="FAIL" starttime="20230909 08:06:57.323" endtime="20230909 08:06:57.323"/>
+</kw>
+<kw name="Click Element">
+<arg>//body//p[1]/a[@href="/Exlog?page=1&amp;size=15"]</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.326" endtime="20230909 08:06:57.326"/>
+</kw>
+<status status="FAIL" starttime="20230909 08:06:57.319" endtime="20230909 08:06:57.326">No keyword with name 'Go To' found.</status>
+</test>
+<test id="s1-t3" name="LOG_ERORR" line="42">
+<kw name="Set Variable" library="BuiltIn">
+<var>${page_number}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230909 08:06:57.331" level="INFO">${page_number} = 1</msg>
+<status status="PASS" starttime="20230909 08:06:57.331" endtime="20230909 08:06:57.331"/>
+</kw>
+<kw name="RPA.Browser.Selenium.Get Text">
+<var>${page}</var>
+<arg>//body/p[1]</arg>
+<msg timestamp="20230909 08:06:57.338" level="FAIL">No keyword with name 'RPA.Browser.Selenium.Get Text' found.</msg>
+<status status="FAIL" starttime="20230909 08:06:57.338" endtime="20230909 08:06:57.339"/>
+</kw>
+<kw name="String_processing.Extract Number From String">
+<var>${Sring_a}</var>
+<arg>${page}</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.342" endtime="20230909 08:06:57.342"/>
+</kw>
+<kw name="String_processing.Extract Number From String1">
+<var>${String_Max_page}</var>
+<arg>${Sring_a}</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.348" endtime="20230909 08:06:57.348"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${String_b}</var>
+<arg>${String_Max_page}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.349" endtime="20230909 08:06:57.349"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${Max_page}</var>
+<arg>int(${String_b.replace(",", "")})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.349" endtime="20230909 08:06:57.349"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${start_time}</var>
+<arg>8:39 AM</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.349" endtime="20230909 08:06:57.349"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${end_time}</var>
+<arg>9:22 AM</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.350" endtime="20230909 08:06:57.350"/>
+</kw>
+<kw name="Convert To 24 Hour Format" library="Time">
+<var>${start_time_24}</var>
+<arg>${start_time}</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.350" endtime="20230909 08:06:57.350"/>
+</kw>
+<kw name="Convert To 24 Hour Format" library="Time">
+<var>${end_time_24}</var>
+<arg>${end_time}</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.350" endtime="20230909 08:06:57.351"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${column_table}</var>
+<arg>Host</arg>
+<arg>Code</arg>
+<arg>Type</arg>
+<arg>Error</arg>
+<arg>Detail</arg>
+<arg>User</arg>
+<arg>Date</arg>
+<arg>Time</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.351" endtime="20230909 08:06:57.351"/>
+</kw>
+<kw name="Create Table">
+<var>${table_data}</var>
+<arg>columns=${column_table}</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.355" endtime="20230909 08:06:57.355"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${current_date}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.356" endtime="20230909 08:06:57.356"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${logged_current_date}</var>
+<arg>${current_date}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.356" endtime="20230909 08:06:57.356"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${Max_page}</value>
+<iter>
+<var name="${i}"/>
+<kw name="Execute Javascript">
+<var>${Quantity_TR}</var>
+<arg>return document.querySelectorAll('table#ErrorLog tr.even-row, table#ErrorLog tr.odd-row').length</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.359" endtime="20230909 08:06:57.359"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>2</value>
+<value>${Quantity_TR} + 2</value>
+<iter>
+<var name="${j}"/>
+<kw name="RPA.Browser.Selenium.Get Text">
+<var>${host}</var>
+<arg>//table[@id="ErrorLog"]/tbody/tr[${j}]/td[1]</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.366" endtime="20230909 08:06:57.366"/>
+</kw>
+<kw name="RPA.Browser.Selenium.Get Text">
+<var>${code}</var>
+<arg>//table[@id="ErrorLog"]/tbody/tr[${j}]/td[2]</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.372" endtime="20230909 08:06:57.372"/>
+</kw>
+<kw name="RPA.Browser.Selenium.Get Text">
+<var>${type}</var>
+<arg>//table[@id="ErrorLog"]/tbody/tr[${j}]/td[3]</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.375" endtime="20230909 08:06:57.375"/>
+</kw>
+<kw name="RPA.Browser.Selenium.Get Text">
+<var>${error}</var>
+<arg>//table[@id="ErrorLog"]/tbody/tr[${j}]/td[4]/span</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.382" endtime="20230909 08:06:57.382"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${element_a}</var>
+<arg>//table[@id="ErrorLog"]/tbody/tr[${j}]/td[4]/a</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.382" endtime="20230909 08:06:57.382"/>
+</kw>
+<kw name="Get Element Attribute">
+<var>${Detail}</var>
+<arg>${element_a}</arg>
+<arg>href</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.391" endtime="20230909 08:06:57.391"/>
+</kw>
+<kw name="RPA.Browser.Selenium.Get Text">
+<var>${user}</var>
+<arg>//table[@id="ErrorLog"]/tbody/tr[${j}]/td[5]</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.397" endtime="20230909 08:06:57.397"/>
+</kw>
+<kw name="RPA.Browser.Selenium.Get Text">
+<var>${date}</var>
+<arg>//table[@id="ErrorLog"]/tbody/tr[${j}]/td[6]</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.404" endtime="20230909 08:06:57.404"/>
+</kw>
+<kw name="RPA.Browser.Selenium.Get Text">
+<var>${time}</var>
+<arg>//table[@id="ErrorLog"]/tbody/tr[${j}]/td[7]</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.409" endtime="20230909 08:06:57.410"/>
+</kw>
+<kw name="Convert To 24 Hour Format" library="Time">
+<var>${time}</var>
+<arg>${time}</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.410" endtime="20230909 08:06:57.410"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${time}</var>
+<arg>${time}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.410" endtime="20230909 08:06:57.410"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${start_time_24}</var>
+<arg>${start_time_24}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.410" endtime="20230909 08:06:57.410"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${end_time_24}</var>
+<arg>${end_time_24}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.410" endtime="20230909 08:06:57.410"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${date_string}</var>
+<arg>${date}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.410" endtime="20230909 08:06:57.411"/>
+</kw>
+<kw name="Convert Date String To Formatted Date">
+<var>${date_table}</var>
+<arg>${date_string}</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.411" endtime="20230909 08:06:57.411"/>
+</kw>
+<kw name="Subtract Time From Date" library="DateTime">
+<var>${yesterday_datetime}</var>
+<arg>${current_date}</arg>
+<arg>1 days</arg>
+<doc>Subtracts time from date and returns the resulting date.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.412" endtime="20230909 08:06:57.412"/>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<var>${yesterday_date}</var>
+<arg>${yesterday_datetime}</arg>
+<arg>result_format=%d/%m/%Y</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.412" endtime="20230909 08:06:57.413"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${logged_current_date_Yesterday}</var>
+<arg>${yesterday_date}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.413" endtime="20230909 08:06:57.414"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${logged_date_table}</var>
+<arg>${date_table}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.414" endtime="20230909 08:06:57.414"/>
+</kw>
+<if>
+<branch type="IF" condition="'${logged_date_table}' == '${logged_current_date_Yesterday}' and '${start_time_24}'&lt;='${time}' and '${time}'&lt;='${end_time_24}'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n Host: ${host}, Code: ${code}, Type: ${type}, Error: ${error},Detail:${Detail}, User: ${user}, Date: ${date}, Time: ${time}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.414" endtime="20230909 08:06:57.414"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data_row}</var>
+<arg>${host}</arg>
+<arg>${code}</arg>
+<arg>${type}</arg>
+<arg>${error}</arg>
+<arg>${Detail}</arg>
+<arg>${user}</arg>
+<arg>${date}</arg>
+<arg>${time}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.415" endtime="20230909 08:06:57.415"/>
+</kw>
+<kw name="Add Table Row">
+<arg>${table_data}</arg>
+<arg>${data_row}</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.418" endtime="20230909 08:06:57.418"/>
+</kw>
+<status status="NOT RUN" starttime="20230909 08:06:57.414" endtime="20230909 08:06:57.418"/>
+</branch>
+<status status="NOT RUN" starttime="20230909 08:06:57.414" endtime="20230909 08:06:57.418"/>
+</if>
+<if>
+<branch type="IF" condition="${j} == ${Quantity_TR} + 1">
+<kw name="Click Element">
+<arg>//body//p[2]//a</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.421" endtime="20230909 08:06:57.421"/>
+</kw>
+<status status="NOT RUN" starttime="20230909 08:06:57.418" endtime="20230909 08:06:57.421"/>
+</branch>
+<status status="NOT RUN" starttime="20230909 08:06:57.418" endtime="20230909 08:06:57.421"/>
+</if>
+<status status="NOT RUN" starttime="20230909 08:06:57.360" endtime="20230909 08:06:57.421"/>
+</iter>
+<status status="NOT RUN" starttime="20230909 08:06:57.359" endtime="20230909 08:06:57.421"/>
+</for>
+<if>
+<branch type="IF" condition="'${logged_date_table}' == '${logged_current_date_Yesterday}' and '${start_time_24}'&gt;'${time}'">
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.421" endtime="20230909 08:06:57.421"/>
+</kw>
+<status status="NOT RUN" starttime="20230909 08:06:57.421" endtime="20230909 08:06:57.421"/>
+</branch>
+<status status="NOT RUN" starttime="20230909 08:06:57.421" endtime="20230909 08:06:57.421"/>
+</if>
+<status status="NOT RUN" starttime="20230909 08:06:57.356" endtime="20230909 08:06:57.421"/>
+</iter>
+<status status="NOT RUN" starttime="20230909 08:06:57.356" endtime="20230909 08:06:57.421"/>
+</for>
+<kw name="Close Browser">
+<status status="NOT RUN" starttime="20230909 08:06:57.425" endtime="20230909 08:06:57.425"/>
+</kw>
+<kw name="Analyze Data">
+<var>${DataFrame}</var>
+<arg>${table_data}</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.430" endtime="20230909 08:06:57.430"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${DataFrame}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230909 08:06:57.430" endtime="20230909 08:06:57.430"/>
+</kw>
+<kw name="EXPORT_Excel">
+<arg>${table_data}</arg>
+<arg>OUTPUT.xlsx</arg>
+<arg>DATA</arg>
+<arg>${OUTPUT_DIR}</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.431" endtime="20230909 08:06:57.431"/>
+</kw>
+<kw name="Get Secret">
+<var>${Datalogin}</var>
+<arg>Email</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.434" endtime="20230909 08:06:57.434"/>
+</kw>
+<kw name="SEND_MAIL">
+<arg>${Datalogin}[username]</arg>
+<arg>${Datalogin}[Tomail]</arg>
+<arg>REBORT_'${logged_current_date}'</arg>
+<arg>${BODY}</arg>
+<arg>D:/RPA/output/OUTPUT.xlsx</arg>
+<status status="NOT RUN" starttime="20230909 08:06:57.434" endtime="20230909 08:06:57.434"/>
+</kw>
+<status status="FAIL" starttime="20230909 08:06:57.330" endtime="20230909 08:06:57.434">No keyword with name 'RPA.Browser.Selenium.Get Text' found.</status>
+</test>
+<status status="FAIL" starttime="20230909 08:06:57.146" endtime="20230909 08:06:57.436"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="MJ">MJ</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230909 08:06:57.172" level="ERROR">Error in file 'D:\Mock_Project\MJ.robot' on line 2: Importing library 'RPA.Browser.Selenium' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230909 08:06:57.175" level="ERROR">Error in file 'D:\Mock_Project\MJ.robot' on line 3: Importing library 'RPA.Robocorp.Vault' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230909 08:06:57.178" level="ERROR">Error in file 'D:\Mock_Project\MJ.robot' on line 4: Importing library 'RPA.Desktop' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230909 08:06:57.215" level="ERROR">Error in file 'D:\Mock_Project\MJ.robot' on line 9: Importing library 'D:\Mock_Project\String_processing.py' failed: ModuleNotFoundError: No module named 'bs4'
+Traceback (most recent call last):
+  File "D:\Mock_Project\String_processing.py", line 2, in &lt;module&gt;
+    from bs4 import BeautifulSoup
+PYTHONPATH:
+  D:\Mock_Project
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230909 08:06:57.221" level="ERROR">Error in file 'D:\Mock_Project\MJ.robot' on line 10: Importing library 'RPA.Windows' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230909 08:06:57.227" level="ERROR">Error in file 'D:\Mock_Project\MJ.robot' on line 12: Importing library 'RPA.Salesforce' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230909 08:06:57.239" level="ERROR">Error in file 'D:\Mock_Project\MJ.robot' on line 14: Importing library 'RPA.Excel.Files' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230909 08:06:57.259" level="ERROR">Error in file 'D:\Mock_Project\MJ.robot' on line 16: Importing library 'RPA.Tables' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230909 08:06:57.268" level="ERROR">Error in file 'D:\Mock_Project\MJ.robot' on line 17: Importing library 'D:\Mock_Project\my_pandas_script.py' failed: ModuleNotFoundError: No module named 'pandas'
+Traceback (most recent call last):
+  File "D:\Mock_Project\my_pandas_script.py", line 1, in &lt;module&gt;
+    import pandas as pd
+PYTHONPATH:
+  D:\Mock_Project
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230909 08:06:57.275" level="ERROR">Error in file 'D:\Mock_Project\MJ.robot' on line 18: Importing library 'RPA.Email.ImapSmtp' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230909 08:06:57.282" level="ERROR">Error in file 'D:\Mock_Project\MJ.robot' on line 19: Importing library 'RPA.Outlook.Application' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230909 08:06:57.288" level="ERROR">Error in file 'D:\Mock_Project\MJ.robot' on line 20: Importing library 'RPA.FileSystem' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311
+  C:\Users\NguyenKhanh\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+</errors>
+</robot>
